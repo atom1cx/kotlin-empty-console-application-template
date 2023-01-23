@@ -3,7 +3,7 @@ package com.playground
 import org.junit.Test
 
 class ReverseIntTest {
-    val reverseInt = ReverseInt()
+    private val reverseInt = ReverseInt()
 
     @Test
     fun zeroInputReversedToZero() {
@@ -17,6 +17,30 @@ class ReverseIntTest {
     fun singleDigitNumberReverseIsEqualToInput() {
         val input = 7
         val expectation = 7
+
+        assert(reverseInt.reverse(input) == expectation)
+    }
+
+    @Test
+    fun twoDifferentDigitsReversedCorrectly() {
+        val input = 12
+        val expectation = 21
+
+        assert(reverseInt.reverse(input) == expectation)
+    }
+
+    @Test
+    fun threeDifferentDigitsReversedCorrectly1() {
+        val input = 123
+        val expectation = 321
+
+        assert(reverseInt.reverse(input) == expectation)
+    }
+
+    @Test
+    fun threeDifferentDigitsReversedCorrectly2() {
+        val input = 965
+        val expectation = 569
 
         assert(reverseInt.reverse(input) == expectation)
     }
